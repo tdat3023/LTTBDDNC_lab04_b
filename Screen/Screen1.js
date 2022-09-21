@@ -10,13 +10,6 @@ import React, { useState } from "react";
 import { useRoute } from "@react-navigation/native";
 
 export default function Screen1({ navigation }) {
-  var blue = require("../assets/xanh.png");
-  var silve = require("../image/bac.png");
-  var red = require("../image/do.png");
-  var black = require("../image/den.png");
-  var image = { blue, silve, red, black };
-  var [link, setLink] = useState(image.blue);
-
   return (
     <View style={styles.AndroidSafeArea}>
       <View
@@ -33,7 +26,7 @@ export default function Screen1({ navigation }) {
             marginTop: 50,
             alignSelf: "center",
           }}
-          source={link}
+          source={require("../assets/xanh.png")}
         />
         <Text style={{ textAlign: "center", marginTop: 26, fontSize: 18 }}>
           Điện thoại Vsmart Joy 3 - Hàng chính hãng

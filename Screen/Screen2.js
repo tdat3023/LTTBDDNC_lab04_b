@@ -11,18 +11,6 @@ import { useRoute } from "@react-navigation/native";
 
 export default function Screen2({ navigation }) {
   const title = "Điện thoại VSmart Joy 3\nHàng chính hãng";
-  var blue = require("../assets/xanh.png");
-  var silve = require("../image/bac.png");
-  var red = require("../image/do.png");
-  var black = require("../image/den.png");
-  var image = { blue, silve, red, black };
-  var [link, setLink] = useState(image.blue);
-  var [title_color, setTitle_color] = useState("");
-  var [color, setColor] = useState("");
-  var [provide, setProvide] = useState("");
-  var [provider, setProvider] = useState("");
-  var [cost, setCost] = useState("");
-  var [i, seti] = useState(0);
   return (
     <View style={styles.AndroidSafeArea}>
       <View
@@ -37,27 +25,19 @@ export default function Screen2({ navigation }) {
             style={{
               width: 125,
               height: 150,
-
               marginLeft: 10,
               alignSelf: "flex-start",
             }}
-            source={link}
+            source={require("../assets/xanh.png")}
           />
           <View style={{ flexDirection: "column", marginLeft: 15 }}>
             <Text style={{ marginTop: 15, fontSize: 18 }}>{title}</Text>
             <View style={{ marginTop: 9, flexDirection: "row" }}>
-              <Text style={{ fontSize: 18 }}>{title_color}</Text>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>{color}</Text>
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}></Text>
             </View>
-            <View style={{ marginTop: 9, flexDirection: "row" }}>
-              <Text style={{ fontSize: 18 }}>{provide}</Text>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                {provider}
-              </Text>
-            </View>
-            <Text style={{ marginTop: 9, fontSize: 18, fontWeight: "bold" }}>
-              {cost}
-            </Text>
+            <Text
+              style={{ marginTop: 9, fontSize: 18, fontWeight: "bold" }}
+            ></Text>
           </View>
         </View>
 
@@ -66,7 +46,6 @@ export default function Screen2({ navigation }) {
             Chọn 1 màu bên dưới:{" "}
           </Text>
           <TouchableOpacity
-            onPressIn={onPress1}
             activeOpacity={0.5}
             style={{
               alignSelf: "center",
@@ -77,7 +56,6 @@ export default function Screen2({ navigation }) {
             }}
           ></TouchableOpacity>
           <TouchableOpacity
-            onPressIn={onPress2}
             activeOpacity={0.5}
             style={{
               alignSelf: "center",
@@ -88,7 +66,6 @@ export default function Screen2({ navigation }) {
             }}
           ></TouchableOpacity>
           <TouchableOpacity
-            onPressIn={onPress3}
             activeOpacity={0.5}
             style={{
               alignSelf: "center",
@@ -99,7 +76,6 @@ export default function Screen2({ navigation }) {
             }}
           ></TouchableOpacity>
           <TouchableOpacity
-            onPressIn={onPress4}
             activeOpacity={0.5}
             style={{
               alignSelf: "center",
@@ -111,7 +87,6 @@ export default function Screen2({ navigation }) {
           ></TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("Home", { message: link })}
             activeOpacity={0.5}
             style={{
               flexDirection: "row",
@@ -141,51 +116,6 @@ export default function Screen2({ navigation }) {
       </View>
     </View>
   );
-
-  function onPress1() {
-    return (
-      setTitle_color((title_color = "Màu: ")),
-      setColor((color = "Bạc")),
-      setProvide((provide = "Cung cấp bởi ")),
-      setProvider((provider = "Tiki Tradding")),
-      setCost((cost = "1.790.000 đ")),
-      setLink(image.silve),
-      seti((i = 1))
-    );
-  }
-  function onPress2() {
-    return (
-      setTitle_color((title_color = "Màu: ")),
-      setColor((color = "Đỏ")),
-      setProvide((provide = "Cung cấp bởi ")),
-      setProvider((provider = "Tiki Tradding")),
-      setCost((cost = "1.790.000 đ")),
-      setLink(image.red),
-      seti((i = 2))
-    );
-  }
-  function onPress3() {
-    return (
-      setTitle_color((title_color = "Màu: ")),
-      setColor((color = "Đen")),
-      setProvide((provide = "Cung cấp bởi ")),
-      setProvider((provider = "Tiki Tradding")),
-      setCost((cost = "1.790.000 đ")),
-      setLink(image.black),
-      seti((i = 3))
-    );
-  }
-  function onPress4() {
-    return (
-      setTitle_color((title_color = "Màu: ")),
-      setColor((color = "Xanh")),
-      setProvide((provide = "Cung cấp bởi ")),
-      setProvider((provider = "Tiki Tradding")),
-      setCost((cost = "1.790.000 đ")),
-      setLink(image.blue),
-      seti((i = 4))
-    );
-  }
 }
 
 const styles = StyleSheet.create({
